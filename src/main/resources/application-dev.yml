@@ -1,0 +1,22 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    username: root
+    password: 957781505yk
+    url: jdbc:mysql://localhost:3306/majiang?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+server:
+  port: 8899
+github:
+  client:
+    id: Iv1.907453a588334e7a
+    secret: f3e7a14a890ba9e8bcca7cdac1b273619c18bdbf
+  redirect:
+    uri: http://localhost:8899/callback
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+

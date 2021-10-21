@@ -18,5 +18,5 @@ github:
     uri: http://localhost:8899/callback
 mybatis:
   configuration:
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: false
 

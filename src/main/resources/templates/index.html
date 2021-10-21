@@ -61,15 +61,15 @@
       <div class="media" th:each="question : ${questions}">
           <div class="media-left">
             <a href="#">
-              <img class="media-object img-rounded" src="..." alt="...">
+              <img class="media-object img-rounded" th:src="${question.getUser().getAvatar_url()}" alt="...">
             </a>
           </div>
           <div class="media-body">
             <h4 class="media-heading" th:text="${question.title}"></h4>
-            <span th:text="${question.description}">[[${question.description}]]</span><br>
-            <span class="text-desc">•<span th:text>${question.getUser().getName()}</span>发起了问题 • <span
-                    th:text="${question.getComment_count()}"></span> 个回复 • <span th:text="${            question.getView_count()
-}"></span>次浏览 • 49 分钟前</span>
+            <span th:text="${question.description}"></span><br>
+            <span class="text-desc">•[[${question.getUser().getName()}]]</span>发起了问题 • <span>
+              [[${question.getComment_count()}]]
+            </span> 个回复 • <span>[[${question.getView_count()}]]</span>次浏览 • <span th:text="${#dates.format(question.gmt_create,'yyyy-MM-dd HH:mm:ss')}">13 May 2011</span>
           </div>
         </li>
       </div>

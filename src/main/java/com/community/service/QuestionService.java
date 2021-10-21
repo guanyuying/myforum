@@ -23,6 +23,7 @@ public class QuestionService {
         List<QuestionDTO> questionDTOList=new ArrayList<>();
         for (Question question : questionList) {
             User user=userMapper.findById(question.getCreator());
+
             QuestionDTO questionDTO = new QuestionDTO();
             BeanUtils.copyProperties(question,questionDTO);
             questionDTO.setUser(user);

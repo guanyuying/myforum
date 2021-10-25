@@ -1,11 +1,13 @@
 package com.community.controller;
 
+import com.community.dto.PaginationDTO;
 import com.community.dto.QuestionDTO;
 import com.community.mapper.QuestionMapper;
 import com.community.mapper.UserMapper;
 import com.community.model.Question;
 import com.community.model.User;
 import com.community.service.QuestionService;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +28,9 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(HttpServletRequest request,
-                        Model model) {
+                        Model model,
+                        @RequestParam(name = "page",defaultValue = "1")Integer page,
+                        @RequestParam(name = "size",defaultValue = "2")Integer size) {
 
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length != 0)
@@ -40,10 +44,9 @@ public class IndexController {
                     break;
                 }
             }
-        List<QuestionDTO> questionList = questionService.list();
+        PaginationDTO pagination = questionService.list(page,size);
 
-
-        model.addAttribute("questions", questionList);
+            model.addAttribute("pagination", pagination);
 
         return "index";
 

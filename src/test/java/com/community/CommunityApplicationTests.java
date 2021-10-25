@@ -15,10 +15,7 @@ class CommunityApplicationTests {
 
     @Test
     void contextLoads() {
-        List<QuestionDTO> list = questionService.list();
-        for (QuestionDTO questionDTO : list) {
-            System.out.println(questionDTO.getUser().getAvatar_url());
-        }
+
     }
 
 }

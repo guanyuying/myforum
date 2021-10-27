@@ -13,7 +13,7 @@ server:
 github:
   client:
     id: Iv1.907453a588334e7a
-    secret: f3e7a14a890ba9e8bcca7cdac1b273619c18bdbf
+    secret:
   redirect:
     uri: http://localhost:8899/callback
 mybatis:
